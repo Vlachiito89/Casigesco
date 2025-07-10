@@ -1,0 +1,37 @@
+create database casigesco;
+use casigesco;
+
+
+CREATE TABLE Clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,  
+    nombres VARCHAR(100) NOT NULL,              
+    apellidos VARCHAR(100) NOT NULL,            
+    cedula INT(11) NOT NULL,                
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+);
+
+CREATE TABLE Almuerzos (
+    id_almuerzo INT AUTO_INCREMENT PRIMARY KEY,    
+    nombre_almuerzo VARCHAR(100) NOT NULL,          
+    dia_almuerzo ENUM('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL 
+);
+
+
+CREATE TABLE Restaurante (
+    id_restaurante INT AUTO_INCREMENT PRIMARY KEY,  
+    nombre_restaurante VARCHAR(100) NOT NULL,       
+    ubicacion_restaurante VARCHAR(255) NOT NULL     
+);
+
+
+CREATE TABLE Marcaciones (
+    id_marcacion INT AUTO_INCREMENT PRIMARY KEY,   
+    id_cliente INT NOT NULL,                        
+    hora_marcacion TIME NOT NULL,                   
+    fecha_marcacion DATE NOT NULL,
+    id_almuerzo INT,
+    id_restaurante int not null default 1,
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+    FOREIGN KEY (id_almuerzo) REFERENCES Almuerzos(id_almuerzo),
+    FOREIGN KEY (id_restaurante) REFERENCES Restaurante(id_restaurante)
+);
