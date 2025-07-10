@@ -1,0 +1,64 @@
+
+
+
+INSERT INTO Restaurante (nombre_restaurante, ubicacion_restaurante) VALUES
+('La Casa del Sabor', 'Calle 15, N° 32-45, Ciudad Capital'),
+('El Buen Gusto', 'Avenida Libertador, N° 100, Zona Norte'),
+('La Parrilla de Oro', 'Calle 2, N° 77-23, Zona Centro'),
+('Sabor y Tradición', 'Calle 40, N° 15-50, Barrio El Sol'),
+('Restaurante Gourmet', 'Avenida del Mar, N° 20-18, Costa Azul'),
+('Los Tres Tenedores', 'Calle 3, N° 99-12, Barrio El Prado'),
+('El Rincón del Chef', 'Calle 11, N° 45-67, Parque Central'),
+('Pescados y Mariscos', 'Avenida del Río, N° 22-10, Zona Sur'),
+('Delicias de la Abuela', 'Calle 7, N° 8-20, Barrio El Águila'),
+('La Taberna de Juan', 'Calle 6, N° 55-45, Barrio La Loma');
+
+
+
+INSERT INTO Almuerzos (nombre_almuerzo, dia_almuerzo) VALUES
+('Pollo al horno con papas', 'Monday'),
+('Ensalada César', 'Tuesday'),
+('Spaghetti a la Bolognesa', 'Wednesday'),
+('Pescado frito con arroz', 'Thursday'),
+('Tacos al pastor', 'Friday'),
+('Pizza Margarita', 'Saturday'),
+('Hamburguesa con papas fritas', 'Tuesday'),
+('Sopa de verduras', 'Thursday'),
+('Arroz con pollo', 'Monday'),
+('Filete de res con ensalada', 'Friday');
+
+
+
+INSERT INTO Clientes (nombres, apellidos, cedula) VALUES
+('Carlos', 'Pérez', '1234567890'),
+('Ana', 'González', '2345678901'),
+('Luis', 'Martínez', '3456789012'),
+('María', 'Rodríguez', '4567890123'),
+('José', 'López', '5678901234'),
+('Elena', 'Hernández', '6789012345'),
+('Miguel', 'Sánchez', '7890123456'),
+('Patricia', 'García', '8901234567'),
+('Fernando', 'Torres', '9012345678'),
+('Isabel', 'Fernández', '0123456789');
+
+
+INSERT INTO Marcaciones (id_cliente, hora_marcacion, fecha_marcacion) VALUES
+(1, '09:00:00', '2024-11-01'),
+(2, '12:30:00', '2024-11-02'),
+(3, '08:45:00', '2024-11-03'),
+(4, '13:00:00', '2024-11-04'),
+(5, '10:15:00', '2024-11-05'),
+(6, '14:00:00', '2024-11-06'),
+(7, '11:30:00', '2024-11-07'),
+(8, '15:45:00', '2024-11-08'),
+(9, '07:00:00', '2024-11-09'),
+(10, '16:30:00', '2024-11-10');
+
+insert into Marcaciones (id_cliente, hora_marcacion, fecha_marcacion) values
+(1, '09:00:00', '2024-12-04'),
+(1, '09:00:00', '2024-12-07'),
+(1, '09:00:00', '2024-12-10'),
+(1, '09:00:00', '2024-12-24');
+
+INSERT INTO Marcaciones (id_cliente, hora_marcacion, fecha_marcacion, id_restaurante)
+VALUES (1, '13:00:00', CURDATE(), 1);
